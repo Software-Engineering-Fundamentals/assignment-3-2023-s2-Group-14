@@ -1,6 +1,3 @@
-package com.esmat;
-
-import java.security.cert.TrustAnchor;
 import java.util.Date;
 
 public class User {

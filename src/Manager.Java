@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Manager extends User{
 
     public Manager(String userID, String firstName, String lastName, String email, String address, Date dateOfBirth, String phoneNumber, String emergencyContact, String password, String role, String department, double salary) {
