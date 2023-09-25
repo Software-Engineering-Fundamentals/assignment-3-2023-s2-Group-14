@@ -19,14 +19,33 @@ public class User {
 
 
     //This is the user registration function
-    public Boolean registerAccount(String name, String email, String address, Date doB, String phoneNumber,
+    public Boolean registerAccount(String firstName, String lastName, String email, String address, Date doB, String phoneNumber,
                              String emergencyContact, String password){
-        return true;
+
+        /*
+        If firstName, lastName, email, and password fields are not empty then we can create an account for the user
+         */
+        if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !password.isEmpty()){
+            System.out.println("Account was successfully created");
+            return true;
+        }
+
+        /*
+        If firstName, lastName, email, and password fields are empty, cannot create an account for the user and
+        returns false
+         */
+        System.out.println("Account was not successfully created\nPleas fill all the fields");
+        return false;
     }
 
     //This is the login function
     public Boolean login(String email, String password){
-        return true;
+        if (email.equals(this.email) && password.equals(this.password)){
+            System.out.println("Logged in successfully");
+            return true;
+        }
+        System.out.println("Username OR password incorrect");
+        return false;
     }
 
     //This is the reset user's password function
