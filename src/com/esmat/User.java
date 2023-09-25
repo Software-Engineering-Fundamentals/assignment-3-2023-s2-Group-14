@@ -26,7 +26,12 @@ public class User {
 
     //This is the login function
     public Boolean login(String email, String password){
-        return true;
+        if (email.equals(this.email) && password.equals(this.password)){
+            System.out.println("Logged in successfully");
+            return true;
+        }
+        System.out.println("Username OR password incorrect");
+        return false;
     }
 
     //This is the reset user's password function
