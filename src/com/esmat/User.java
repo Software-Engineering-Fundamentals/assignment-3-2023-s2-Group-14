@@ -49,9 +49,13 @@ public class User {
     }
 
     //This is the reset user's password function
-    public boolean resetPassword(String oldPassword, String newPassword){
-        return true;
-    }
+//    public boolean resetPassword(String oldPassword, String newPassword){
+//        if (oldPassword.equals(this.password)){
+//            this.password = newPassword;
+//            return true;
+//        }
+//        return false;
+//    }
 
     public String getEmail() {
         return email;
