@@ -13,7 +13,7 @@ public class Enquiry {
         this.content = content;
         this.resolved = resolved;
         System.out.println("\nYou entered: " + content
-                + "\nSystem is lodging.....\nSuccessfully lodged..!. Please be patient while we handle your enquiry\n");
+                + "\nSystem is lodging.....\nSuccessfully lodged..! Please be patient while we handle your enquiry\n");
     }
 
     // Getter method for userID
@@ -46,9 +46,12 @@ public class Enquiry {
     public void setResolved(boolean resolved) {
         if (resolved == true) {
             this.resolved = resolved;
+            System.out.println("The enquiry " + enquiryID
+                    + " is unresolved and requires more information. Please see details below.\n");
 
         } else {
-            System.out.print("The enquiry " + enquiryID + " is unresolved and  requires more information");
+            System.out.println("The enquiry " + enquiryID
+                    + " is unresolved and requires more information. Please see details below.\n");
 
         }
     }
@@ -57,7 +60,7 @@ public class Enquiry {
     public String toString() {
         return "Enquiry ID: " + enquiryID +
                 "\nUser ID: " + userID +
-                "\nEnquiry Query:\n" + content +
-                "\n\nResolved: " + (resolved ? "Yes" : "No");
+                "\nEnquiry Query:\n\n" + content +
+                "\n\nResolved: " + (resolved ? "Yes\nEnquiry is closed." : "No");
     }
 }
