@@ -1,6 +1,7 @@
 package main.java.model;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class User {
     private String userID;
@@ -115,4 +116,20 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /**
+     * Creates a new Enquiry object with the provided details.
+     *
+     * @param enquiryID The unique identifier for the enquiry.
+     * @param user      The user who submitted the enquiry.
+     * @param content   The content or description of the enquiry.
+     * @param resolved  A boolean indicating whether the enquiry is resolved (true)
+     *                  or not (false).
+     * @return A new Enquiry object with the specified details to Enquiry class.
+     */
+    public static Enquiry createEnquiry(String enquiryID, User user, String content, boolean resolved) {
+        System.out.println("**Created Enquiry.**");
+        return new Enquiry(enquiryID, user.getUserID(), content, resolved);
+    }
+
 }
