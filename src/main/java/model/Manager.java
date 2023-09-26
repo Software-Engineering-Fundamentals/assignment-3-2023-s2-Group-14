@@ -1,7 +1,5 @@
 package main.java.model;
 
-import main.java.model.Enquiry;
-
 public class Manager extends User {
     // The Manager class inherits the User class constructor
     public Manager(String userID, String firstName, String lastName, String email, String password) {

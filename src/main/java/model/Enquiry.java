@@ -33,7 +33,7 @@ public class Enquiry {
 
     // Setter method for content
     public void setContent(String addContents) {
-        this.content = content + "\n------------------------------ \n" + addContents;
+        this.content += "\n------------------------------ \n" + addContents;
 
     }
 
