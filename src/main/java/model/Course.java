@@ -9,9 +9,8 @@ public class Course {
     private String category;
     private double cost;
 
-}
 
-   public Course(String courseId, String title, String instructor, String category, double cost) {
+    public Course(String courseId, String title, String instructor, String category, double cost) {
         this.courseId = courseId;
         this.title = title;
         this.description = description;
@@ -19,3 +18,7 @@ public class Course {
         this.category = category;
         this.cost = cost;
     }
+
+}
+
+   
