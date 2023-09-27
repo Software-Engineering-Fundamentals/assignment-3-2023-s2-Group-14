@@ -23,7 +23,15 @@ public class Main {
                 // Creating a user to lodge an enquiry.
                 User user = new User("user_ID", "Phillip", "Braum", "iHaveAnEnquiry@gmail.com",
                                 "user_password");
-                System.out.printf("%nThe ID of the manager is: %s%n", user.getUserID());
+
+                // User Login Successful, LOGIN = TRUE
+                System.out.println("ALT 1: login = " + user.login("iHaveAnEnquiry@gmail.com", "user_password"));
+                // Space for readability
+                System.out.println();
+                // User Login Unsuccessful, LOGIN = FALSE
+                System.out.println("ALT 2: login = " + user.login("iHaveAnEnquiry@gmail.com", "wrong_password"));
+
+                System.out.printf("%nThe ID of the user is: %s%n", user.getUserID());
                 System.out.println("To lodge an enquiry please enter your problem below:");
 
                 // Sample Enquiry
@@ -39,7 +47,15 @@ public class Main {
                 System.out.printf("%nThe ID of the manager is: %s%n", manager.getUserID());
                 System.out.println();
 
+                // User Login Successful, LOGIN = TRUE
+                System.out.println("ALT 1: Login = " + manager.login("mrmanagerman@gmail.com", "managerPassword"));
+                // Space for readability
+                System.out.println();
+                // User Login Unsuccessful, LOGIN = FALSE
+                System.out.println("ALT 2: Login = " + manager.login("mrmanagerman@gmail.com", "wrong_password"));
+
                 // Manager Views Enquiries, and retrives one.
+                System.out.println("\nRetrieving Enquiries...");
                 manager.viewEnquiries();
 
                 // FIRST ALT OPTION isResolved = true: Manager replies successfully
