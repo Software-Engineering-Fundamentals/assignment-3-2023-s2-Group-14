@@ -18,6 +18,14 @@ public class Main {
                 Instructor instructor = new Instructor("Instructor_ID", "Guy", "Lamar", "mrInstructor@gmail.com",
                                 "instructorAddress",
                                 "instructorDOB", "04123456789", "E: 04123456789", "instructo_password", "Instructor");
+
+                // User Login Successful, LOGIN = TRUE
+                System.out.println("ALT 1: Login = " + instructor.login("mrInstructor@gmail.com", "instructo_password"));
+                // Space for readability
+                System.out.println();
+                // User Login Unsuccessful, LOGIN = FALSE
+                System.out.println("ALT 2: Login = " + instructor.login("mrInstructor@gmail.com", "wrong_password"));
+
                 System.out.printf("%nThe ID of the instructor is: %s%n", instructor.getUserID());
                 System.out.println("To create a course please fill in the details:\n");
                 // We will now have the instructor create a course with prefilled data.
