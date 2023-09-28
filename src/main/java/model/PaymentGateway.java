@@ -1,6 +1,12 @@
 package main.java.model;
+import main.java.model.Course;
+import main.java.model.User;
+import main.java.model.Student;
+
 
 public class PaymentGateway {
+    Course course = new Course();
+    Student student = new Student()
     private String paymentID;
     private String transactionDetails;
     private String userID;
@@ -9,8 +15,17 @@ public class PaymentGateway {
     public PaymentGateway(String paymentID, String transactionDetails, String userID, double totalCost) {
         this.paymentID = paymentID;
         this.transactionDetails = transactionDetails;
-        this.userID = userID;
+        this.userID = user.getUserID();
         this.totalCost = totalCost;
+    }
+
+    public void processPayment() {
+        if (course.getCost() > 0){
+            this.totalCost = course.getCost();
+            System.out.println("Processing Payment");
+            System.out.println("User:\n" + user.getFirstName() + " " + user.getLastName());
+
+        }
     }
 
     public String getPaymentID() {
@@ -44,3 +59,5 @@ public class PaymentGateway {
     public void addTotalCost(double courseCost) {
         this.totalCost += courseCost;
     }
+
+}

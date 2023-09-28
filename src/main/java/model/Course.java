@@ -9,7 +9,9 @@ public class Course {
     private String category;
     private double cost;
 
+    public Course() {
 
+    }
     public Course(String courseId, String title, String instructor, String category, double cost) {
         this.courseId = courseId;
         this.title = title;
@@ -22,8 +24,10 @@ public class Course {
     public double getCourseCost(String courseName){
         double notvalidCourse = 0.0;
         if (courseName == this.title) {
+            System.out.println("Course fees is " + this.cost);
             return this.cost;
         }
+        System.out.println("Course fees is " + notvalidCourse);
         return notvalidCourse;
     }
 
