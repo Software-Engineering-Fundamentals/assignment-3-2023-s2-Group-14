@@ -16,7 +16,7 @@ public class Student extends User {
     public void enrollCourse(String courseName) {
         //We check if the course is available then we enroll the student into that course
         if (courseName.equals(course.getTitle)){
-            System.out.println(getFirstName() + " Enrolled in " + course.getTitle());
+            System.out.println(getFirstName() + " Enrolling into " + course.getTitle());
         }
     }
 

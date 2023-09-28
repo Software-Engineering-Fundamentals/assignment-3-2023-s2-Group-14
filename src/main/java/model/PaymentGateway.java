@@ -24,7 +24,7 @@ public class PaymentGateway {
     }
 
     public Boolean makePayment(double amount) {
-        if (amount > 0){
+        if (amount >= course.getCost()){
             System.out.println("Making Payment");
             System.out.println("User:\n" + student.getFirstName() + " " + student.getLastName() + "");
             System.out.println("Amount $" + this.totalCost);
