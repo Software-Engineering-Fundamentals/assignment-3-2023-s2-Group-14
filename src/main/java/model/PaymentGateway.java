@@ -15,7 +15,7 @@ public class PaymentGateway {
     public PaymentGateway(String paymentID, String transactionDetails, String userID, double totalCost) {
         this.paymentID = paymentID;
         this.transactionDetails = transactionDetails;
-        this.userID = user.getUserID();
+        this.userID = student.getUserID();
         this.totalCost = totalCost;
     }
 
