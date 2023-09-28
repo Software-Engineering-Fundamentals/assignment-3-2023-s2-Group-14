@@ -12,6 +12,10 @@ public class PaymentGateway {
     private String userID;
     private double totalCost;
 
+    //This is an empty constructor
+    public PaymentGateway(){
+
+    }
     public PaymentGateway(String paymentID, String transactionDetails, String userID, double totalCost) {
         this.paymentID = paymentID;
         this.transactionDetails = transactionDetails;
@@ -19,14 +23,18 @@ public class PaymentGateway {
         this.totalCost = totalCost;
     }
 
-    public void processPayment() {
-        if (course.getCost() > 0){
-            this.totalCost = course.getCost();
-            System.out.println("Processing Payment");
-            System.out.println("User:\n" + user.getFirstName() + " " + user.getLastName());
-
+    public Boolean makePayment(double amount) {
+        if (amount > 0){
+            System.out.println("Making Payment");
+            System.out.println("User:\n" + student.getFirstName() + " " + student.getLastName() + "");
+            System.out.println("Amount $" + this.totalCost);
+            return true;
         }
+        System.out.println("Payement was not successfull");
+        return false;
     }
+
+
 
     public String getPaymentID() {
         return paymentID;

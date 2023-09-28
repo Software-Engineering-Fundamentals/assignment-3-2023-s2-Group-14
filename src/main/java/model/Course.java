@@ -8,6 +8,7 @@ public class Course {
     private String instructor;
     private String category;
     private double cost;
+    public Object getTitle;
 
     public Course() {
 
@@ -22,13 +23,19 @@ public class Course {
     }
 
     public double getCourseCost(String courseName){
-        double notvalidCourse = 0.0;
-        if (courseName == this.title) {
-            System.out.println("Course fees is " + this.cost);
+        if (courseName.equals(this.title)){
             return this.cost;
         }
-        System.out.println("Course fees is " + notvalidCourse);
-        return notvalidCourse;
+        return 0.0;
+    }
+
+
+    public void displayCourseContent(){
+        System.out.println("Displaying course content...");
+        System.out.println("Video lecture of Week02");
+        System.out.println("Lecture powerpoint slides.");
+        System.out.println("Lecture Quize.");
+
     }
 
     public String getCourseId() {
