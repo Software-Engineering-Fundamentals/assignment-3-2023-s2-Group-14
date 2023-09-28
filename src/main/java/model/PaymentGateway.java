@@ -6,7 +6,7 @@ import main.java.model.Student;
 
 public class PaymentGateway {
     Course course = new Course();
-    Student student = new Student()
+    Student student = new Student();
     private String paymentID;
     private String transactionDetails;
     private String userID;
