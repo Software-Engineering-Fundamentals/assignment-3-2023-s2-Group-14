@@ -1,6 +1,7 @@
 package main.java.model;
 
-import java.util.Date;
+import java.sql.Date;
+
 import java.util.Scanner;
 
 public class User {
@@ -9,17 +10,16 @@ public class User {
     private String lastName;
     private String email;
     private String address;
-    private Date dateOfBirth;
+    private String dateOfBirth; // For simplicity sake we will declare dateOfBirth as a string instead of date
     private String phoneNumber;
     private String emergencyContact;
     private String password;
     private String role;
 
-    public User(){
-        
-    }
-
-    public User(String userID, String firstName, String lastName, String email, String address, Date dateOfBirth, String phoneNumber, String emergencyContact, String password, String role) {
+    // Constructor
+    public User(String userID, String firstName, String lastName, String email, String address,
+            String dateOfBirth,
+            String phoneNumber, String emergencyContact, String password, String role) {
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,16 +30,6 @@ public class User {
         this.emergencyContact = emergencyContact;
         this.password = password;
         this.role = role;
-    }
-
-    // Constructor
-    //this constructor needs to be removed and above one should be used.
-    public User(String userID, String firstName, String lastName, String email, String password) {
-        this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
     }
 
     // This is the user registration function

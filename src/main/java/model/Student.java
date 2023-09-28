@@ -1,29 +1,43 @@
 package main.java.model;
+
 import main.java.model.Course;
-import main.java.model.PaymentGateway;
+
 public class Student extends User {
 
-    Course course = new Course();
-    PaymentGateway payment = new PaymentGateway();
-
-    public Student(String string, String string2, String string3, String string4, String string5, String string6){
-
-    }
-    public Student(String userID, String firstName, String lastName, String email, String password, String dob, String string, String string2, String string3, String string4) {
-        super(userID, firstName, lastName, email, password);
+    public Student(String userID, String firstName, String lastName, String email, String address, String dateOfBirth,
+            String phoneNumber, String emergencyContact, String password, String role) {
+        super(userID, firstName, lastName, email, address, dateOfBirth, phoneNumber, emergencyContact, password, role);
+        // Initialize additional fields specific to Student, if any
     }
 
-    public void enrollCourse(String courseName) {
-        //We check if the course is available then we enroll the student into that course
-        if (courseName.equals(course.getTitle)){
-            System.out.println(getFirstName() + " Enrolling into " + course.getTitle());
-        }
+    // Dummy method to enroll in a course
+    public void enrollCourse(Course course) {
+        // Add code to enroll the student in the specified course
+        // If student is swapping courses, no fee, else a fee is required.
     }
 
-    public void accessCourseContent(String courseName){
-        if (payment.makePayment(0)== true){
-            course.displayCourseContent();
-        } 
+    // Dummy method to access course content
+    public void accessCourseContent(Course course) {
+        // Add code to allow the student to access the content of the specified course
+    }
+
+    // Dummy method to post a question
+    public String postQuestion(String question) {
+        // Add code to post a question and return a confirmation message
+        return "Question posted: " + question;
+    }
+
+    // Dummy method to participate in a discussion
+    public String participateDiscussion(Course course, String message) {
+        // Add code to allow the student to participate in the discussion of the
+        // specified course
+        return "Message posted in discussion: " + message;
+    }
+
+    // Dummy method to request course withdrawal
+    public void requestCourseWithdrawal(Course course) {
+        // Add code to allow the student to request withdrawal from the specified course
+        // If Refund==True for course, can also receive a refund.
     }
 
 }

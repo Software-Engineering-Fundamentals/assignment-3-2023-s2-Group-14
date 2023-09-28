@@ -1,9 +1,11 @@
 package main.java.model;
 
-public class Manager extends User {
-    // The Manager class inherits the User class constructor
-    public Manager(String userID, String firstName, String lastName, String email, String password) {
-        super(userID, firstName, lastName, email, password);
+public class Manager extends Employee {
+    // The Manager class inherits the Employee class constructor
+    public Manager(String userID, String firstName, String lastName, String email, String address, String dateOfBirth,
+            String phoneNumber, String emergencyContact, String password, String role) {
+        super(userID, firstName, lastName, email, address, dateOfBirth, phoneNumber, emergencyContact, password, role);
+        // Initialize additional fields specific to Manager, if any
     }
 
     public void viewEnquiries() {
@@ -24,11 +26,11 @@ public class Manager extends User {
         enquiry.setContent(message);
         // If the status is solved.
         if (resolveStatus == true) {
-            enquiry.setResolved(true);
+            enquiry.statusEnquiry(true);
         }
         // If the status is unsolved.
         else {
-            enquiry.setResolved(false);
+            enquiry.statusEnquiry(false);
         }
 
     }
