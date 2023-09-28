@@ -1,40 +1,33 @@
 package main.java.model;
-import main.java.model.Course;
-import main.java.model.User;
-import main.java.model.Student;
-
 
 public class PaymentGateway {
-    Course course = new Course();
-    Student student = new Student();
     private String paymentID;
     private String transactionDetails;
     private String userID;
     private double totalCost;
 
-    //This is an empty constructor
-    public PaymentGateway(){
+    // This is an empty constructor
+    public PaymentGateway() {
 
     }
+
     public PaymentGateway(String paymentID, String transactionDetails, String userID, double totalCost) {
         this.paymentID = paymentID;
         this.transactionDetails = transactionDetails;
-        this.userID = student.getUserID();
+        this.userID = userID;
         this.totalCost = totalCost;
     }
 
     public Boolean makePayment(double amount) {
-        if (amount >= course.getCost()){
+        if (amount >= this.totalCost) {
             System.out.println("Making Payment");
-            System.out.println("User:\n" + student.getFirstName() + " " + student.getLastName() + "");
-            System.out.println("Amount $" + this.totalCost);
+            System.out.println("User ID: " + this.userID);
+            System.out.println("Amount: $" + this.totalCost);
             return true;
         }
-        System.out.println("Payement was not successfull");
+        System.out.println("Payment was not successful");
         return false;
     }
-
-
 
     public String getPaymentID() {
         return paymentID;
@@ -68,4 +61,13 @@ public class PaymentGateway {
         this.totalCost += courseCost;
     }
 
+    // Dummy method for processing refunds. No parameters, as they are based
+    // internally. However can process a refund by creating a payment receipt class
+    // and refunding.
+    public void processRefund() {
+        // Perform refund processing code here
+        System.out.println("Processing refund for Payment ID: " + paymentID);
+        // You can print a message to indicate the refund was successful
+        System.out.println("Refund processed successfully.");
+    }
 }
