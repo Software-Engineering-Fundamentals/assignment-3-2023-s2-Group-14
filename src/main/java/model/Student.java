@@ -4,6 +4,8 @@ import main.java.model.Course;
 
 public class Student extends User {
 
+    public Object System;
+
     public Student(String userID, String firstName, String lastName, String email, String address, String dateOfBirth,
             String phoneNumber, String emergencyContact, String password, String role) {
         super(userID, firstName, lastName, email, address, dateOfBirth, phoneNumber, emergencyContact, password, role);

@@ -21,7 +21,7 @@ public class Manager extends Employee {
 
     public void answerEnquiry(Enquiry enquiry, String message, boolean resolveStatus) {
 
-        //
+        System.out.println("Now sending message for enquiry...");
 
         enquiry.setContent(message);
         // If the status is solved.

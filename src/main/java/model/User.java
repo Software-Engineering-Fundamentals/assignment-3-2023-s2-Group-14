@@ -36,7 +36,6 @@ public class User {
     public Boolean registerAccount(String firstName, String lastName, String email, String address, Date doB,
             String phoneNumber,
             String emergencyContact, String password) {
-
         /*
          * If firstName, lastName, email, and password fields are not empty then we can
          * create an account for the user
@@ -55,7 +54,9 @@ public class User {
         return false;
     }
 
-    // This is the login function
+    // This is the login function, we will use email, as a login parameter, rather
+    // than username or userID for simplicity, as the system is required to create a
+    // username for user to login with.
     public Boolean login(String email, String password) {
         if (email.equals(this.email) && password.equals(this.password)) {
             System.out.println("Logged in successfully");
@@ -66,13 +67,15 @@ public class User {
     }
 
     // This is the reset user's password function
-    // public boolean resetPassword(String oldPassword, String newPassword){
-    // if (oldPassword.equals(this.password)){
-    // this.password = newPassword;
-    // return true;
-    // }
-    // return false;
-    // }
+    public boolean resetPassword(String oldPassword, String newPassword) {
+        // Dummy code, add logic to implement password reset
+        if (oldPassword.equals(this.password)) {
+            this.password = newPassword;
+            return true;
+        }
+        return false;
+    }
+
     public String getUserID() {
         return userID;
     }
@@ -141,16 +144,8 @@ public class User {
         this.lastName = lastName;
     }
 
-    /**
-     * Creates a new Enquiry object with the provided details.
-     *
-     * @param enquiryID The unique identifier for the enquiry.
-     * @param user      The user who submitted the enquiry.
-     * @param content   The content or description of the enquiry.
-     * @param resolved  A boolean indicating whether the enquiry is resolved (true)
-     *                  or not (false).
-     * @return A new Enquiry object with the specified details to Enquiry class.
-     */
+    // Creates a new Enquiry object with the provided details. Actual logic will
+    // create an Enquiry ticket and store in the database.
     public static Enquiry createEnquiry(String enquiryID, User user, String content, boolean resolved) {
         System.out.println("**Created Enquiry.**");
         return new Enquiry(enquiryID, user.getUserID(), content, resolved);

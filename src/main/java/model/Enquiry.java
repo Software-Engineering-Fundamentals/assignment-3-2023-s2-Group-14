@@ -44,12 +44,11 @@ public class Enquiry {
     public void statusEnquiry(boolean resolved) {
         if (resolved == true) {
             this.resolved = resolved;
-            System.out.println("The enquiry " + enquiryID
-                    + " is unresolved and requires more information. Please see details below.\n");
+            System.out.println("The enquiry " + enquiryID + " is now resolved and closed. Please see details below:\n");
 
         } else {
             System.out.println("The enquiry " + enquiryID
-                    + " is unresolved and requires more information. Please see details below.\n");
+                    + " is unresolved and requires more information. Please see details below:\n");
 
         }
     }

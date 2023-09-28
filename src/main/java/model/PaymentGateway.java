@@ -18,11 +18,15 @@ public class PaymentGateway {
         this.totalCost = totalCost;
     }
 
-    public Boolean makePayment(double amount) {
-        if (amount >= this.totalCost) {
-            System.out.println("Making Payment");
+    // Process payment method, will check if successfull or unsuccesful. Depending
+    // on whether we receive true or false.
+    public Boolean processPayment(boolean payment) {
+        if (payment == true) {
+            System.out.println("\nMaking Payment......\n\nSee details below:");
             System.out.println("User ID: " + this.userID);
             System.out.println("Amount: $" + this.totalCost);
+            System.out
+                    .println("Transaction was succesful. Please check your email inbox for confirmation and invoice.");
             return true;
         }
         System.out.println("Payment was not successful");

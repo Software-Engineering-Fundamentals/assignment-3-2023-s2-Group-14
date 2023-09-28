@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Instructor extends Employee {
     private List<Course> teachingCourses; // List of course Instructor may teach.
+    private Boolean oneTimePayment; // Check if paid one time payment
 
     // The Manager class inherits the Employee class constructor
 
@@ -68,11 +69,46 @@ public class Instructor extends Employee {
 
     public Course registerCourse(String courseId, String title, String description, int duration, Instructor instructor,
             double cost) {
-        System.out.println("Registering course: " + title);
+        // Check if the user is registering their first course
+        if (teachingCourses.isEmpty()) {
+            System.out.println("You are registering your first course. A one-time payment is required.");
+            // Implement payment logic here
+            // We will set up successful payment. Assume one-time registration payment is
+            // $100.00.
+            PaymentGateway paymentGateway = new PaymentGateway("ID: Payment Registration",
+                    "Successful transaction",
+                    instructor.getUserID(), 100.00);
+
+            System.out.println("Alt 1: PaymentProcess = true");
+
+            // System.out.println("Alt 2: PaymentProcess = false")
+            // replace the parameter with "false" to see ALT 2.
+            if (Boolean.FALSE.equals(paymentGateway.processPayment(true))) {
+                System.out.println("Payment failed. Course registration cancelled.");
+                return null;
+            }
+        }
+
+        // Check if a course with the same title already exists
+        for (
+
+        Course existingCourse : teachingCourses) {
+            if (existingCourse.getTitle().equals(title)) {
+                System.out.println("Course with the title '" + title + "' already exists. Registration failed.");
+                return null;
+            }
+        }
+
+        // If it doesnt exist and payment is succesful.
+        System.out.println("Registering course: " + title + ".... Success! Please Proceed with payment.\n");
         // Implement course registration logic here
         // Create a new Course object and return it
-        Course newCourse = new Course(courseId, title, description, duration, instructor.getUserID(), cost);
+        Course newCourse = new Course(courseId, title, description, duration, instructor.getUserID(),
+                cost);
         teachingCourses.add(newCourse);
+        // Will then prompt a one time payment...
         return newCourse;
+
     }
+
 }

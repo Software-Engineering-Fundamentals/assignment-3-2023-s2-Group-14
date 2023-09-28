@@ -13,18 +13,37 @@ public class Main {
 
                 // Subscenario 1.
                 System.out.println(
-                                "***Initialise Scenarerio 1****\nInstructor registers a course on the learning portal/website\n\n**Creating new user...\n");
+                                "***Initialise Scenarerio 1****\nInstructor registers a course on the learning portal/website\n\n**Creating new instructor...");
+                // Creating a Instructor to register Course
+                Instructor instructor = new Instructor("Instructor_ID", "Guy", "Lamar", "mrInstructor@gmail.com",
+                                "instructorAddress",
+                                "instructorDOB", "04123456789", "E: 04123456789", "instructo_password", "Instructor");
+                System.out.printf("%nThe ID of the instructor is: %s%n", instructor.getUserID());
+                System.out.println("To create a course please fill in the details:\n");
+                // We will now have the instructor create a course with prefilled data.
+                // FIRST ALT OPTION courseExists = False: Course doesnt exist.
+                System.out.print("ALT OPTION 1: Course can be created");
+                instructor.registerCourse("exampleCourseID", "Computer science", "Here is a sample description", 3,
+                                instructor, 4999.00);
+                System.out.println("Press any key to continue with the other option. When the course already exists.");
+                scanner.nextLine();
+
+                // Second ALT OPTION courseExists = True: Course already exists.
+                System.out.println("ALT OPTION 2: Course already exists.");
+                instructor.registerCourse("exampleCourseID", "Computer science", "This course already exist!!!", 3,
+                                instructor, 4999.00);
+                scanner.nextLine();
 
                 // Subscenario 2.
                 System.out.println(
-                                "***Initialise Scenarerio 2****\nLodge a general enquiry about the portal which is successfully addressed by the Manager\n\n**Creating new user...\n");
+                                "***Initialise Scenarerio 2****\nLodge a general enquiry about the portal which is successfully addressed by the Manager\n\n**Creating new Student...\n");
                 // Creating a student to lodge an enquiry.
                 Student student = new Student("user_ID", "Phillip", "Braum", "iHaveAnEnquiry@gmail.com",
                                 "studentAddress",
-                                "StudentDOB", "04123456789", "E: 04123456789", "user_password", "Student");
+                                "StudentDOB", "04123456789", "E: 04123456789", "student_password", "Student");
 
                 // student Login Successful, LOGIN = TRUE
-                System.out.println("ALT 1: login = " + student.login("iHaveAnEnquiry@gmail.com", "user_password"));
+                System.out.println("ALT 1: login = " + student.login("iHaveAnEnquiry@gmail.com", "student_password"));
                 // Space for readability
                 System.out.println();
                 // student Login Unsuccessful, LOGIN = FALSE
@@ -70,13 +89,14 @@ public class Main {
                 // SECOND ALT OPTION isResolved = false: Manager replies require more info
 
                 System.out.println(
-                                "We will now run the alternative path, where an enquiry requires more information. Please press any key");
+                                "\nWe will now run the alternative path, where an enquiry requires more information. Please press any key");
                 scanner.nextLine();
                 System.out.print("******ALT OPTION 2******");
                 Enquiry enquiry2 = new Enquiry("ID#12345", student.getUserID(), sampleEnquiry, false);
 
                 // Manager requires more information,
-                manager.answerEnquiry(enquiry2, "#########       Here is the solution to the enquiry     #########",
+                manager.answerEnquiry(enquiry2,
+                                "#########       We require more information for this enquiry     #########",
                                 false);
                 System.out.println(enquiry2.toString());
 
