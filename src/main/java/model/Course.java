@@ -20,10 +20,11 @@ public class Course {
     }
 
     public double getCourseCost(String courseName){
-        if courseName == this.title {
+        double notvalidCourse = 0.0;
+        if (courseName == this.title) {
             return this.cost;
         }
-        return false;
+        return notvalidCourse;
     }
 
     public String getCourseId() {
