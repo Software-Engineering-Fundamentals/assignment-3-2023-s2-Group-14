@@ -2,8 +2,6 @@ package main.java.model;
 
 import java.sql.Date;
 
-import java.util.Scanner;
-
 public class User {
     private String userID;
     private String firstName;
@@ -90,6 +88,10 @@ public class User {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getDOB() {
+        return dateOfBirth;
     }
 
     public void setAddress(String address) {

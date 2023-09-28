@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Instructor extends Employee {
     private List<Course> teachingCourses; // List of course Instructor may teach.
-    private Boolean oneTimePayment; // Check if paid one time payment
 
     // The Manager class inherits the Employee class constructor
 

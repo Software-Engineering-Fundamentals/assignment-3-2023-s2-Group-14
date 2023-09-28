@@ -9,7 +9,7 @@ public class Main {
                 System.out.println(
                                 "We will be running two test sub scenarios in this test, please press any key to continue.");
                 // Prompt the user to continue.
-                String userInput = scanner.nextLine();
+                scanner.nextLine();
 
                 // Subscenario 1.
                 System.out.println(
@@ -22,7 +22,7 @@ public class Main {
                 System.out.println("To create a course please fill in the details:\n");
                 // We will now have the instructor create a course with prefilled data.
                 // FIRST ALT OPTION courseExists = False: Course doesnt exist.
-                System.out.print("ALT OPTION 1: Course can be created");
+                System.out.println("ALT OPTION 1: Course can be created");
                 instructor.registerCourse("exampleCourseID", "Computer science", "Here is a sample description", 3,
                                 instructor, 4999.00);
                 System.out.println("Press any key to continue with the other option. When the course already exists.");
@@ -32,11 +32,13 @@ public class Main {
                 System.out.println("ALT OPTION 2: Course already exists.");
                 instructor.registerCourse("exampleCourseID", "Computer science", "This course already exist!!!", 3,
                                 instructor, 4999.00);
+                System.out.println(
+                                "***End of first sub scenario.***\n\nPress any key to continue with the second scenario.");
                 scanner.nextLine();
-
                 // Subscenario 2.
                 System.out.println(
                                 "***Initialise Scenarerio 2****\nLodge a general enquiry about the portal which is successfully addressed by the Manager\n\n**Creating new Student...\n");
+
                 // Creating a student to lodge an enquiry.
                 Student student = new Student("user_ID", "Phillip", "Braum", "iHaveAnEnquiry@gmail.com",
                                 "studentAddress",
@@ -83,7 +85,8 @@ public class Main {
                 System.out.println("******ALT OPTION 1******");
                 manager.answerEnquiry(enquiry1, "#########       Here is the solution to the enquiry     #########",
                                 true);
-                // Print out the successsful answer enquiry.
+                // Tostring method to successful enquiry
+
                 System.out.println(enquiry1.toString());
 
                 // SECOND ALT OPTION isResolved = false: Manager replies require more info
@@ -98,21 +101,10 @@ public class Main {
                 manager.answerEnquiry(enquiry2,
                                 "#########       We require more information for this enquiry     #########",
                                 false);
-                System.out.println(enquiry2.toString());
 
-                // // Student can enroll into course and can access into course;
-                // LocalDate currentDate = LocalDate.now();
-                // int year = currentDate.getYear();
-                // int month = currentDate.getMonthValue();
-                // int day = currentDate.getDayOfMonth();
-                // String dob = (day + "/" + month + "/" + year);
-                // Student john = new Student("875432", "John", "Dao", "johndao@gmail.com", "123
-                // exmaple streen", dob,
-                // "049000034", "049000036", "john12345", "Student");
-                // Course sef = new Course("C2345", "Software Engineering",
-                // "This is a software engineering foundmental course", 6, "Instructor",
-                // "Computer Science", 1287.99);
-                // john.enrollCourse("dob");
+                // toString method to print enquiry need more info
+                System.out.println(enquiry2.toString());
+                scanner.close();
 
         }
 

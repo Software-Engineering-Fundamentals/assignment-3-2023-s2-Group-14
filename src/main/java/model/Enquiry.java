@@ -31,6 +31,7 @@ public class Enquiry {
         return content;
     }
 
+    // Format and update enquiry.
     public void setContent(String addContents) {
         this.content += "\n------------------------------ \n" + addContents;
 
@@ -40,9 +41,9 @@ public class Enquiry {
         return resolved;
     }
 
-    // Check status
+    // Check enquiry status
     public void statusEnquiry(boolean resolved) {
-        if (resolved == true) {
+        if (resolved) {
             this.resolved = resolved;
             System.out.println("The enquiry " + enquiryID + " is now resolved and closed. Please see details below:\n");
 
@@ -54,6 +55,7 @@ public class Enquiry {
     }
 
     @Override
+    // String and print to a better format.
     public String toString() {
         return "Enquiry ID: " + enquiryID +
                 "\nUser ID: " + userID +

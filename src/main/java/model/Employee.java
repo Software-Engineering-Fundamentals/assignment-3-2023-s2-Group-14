@@ -1,7 +1,8 @@
 package main.java.model;
 
 /**
- * Employee
+ * Employee For manager, instructors, IT manager, financial manager and staff
+ * only
  */
 public class Employee extends User {
     // The Employee class inherits the User class constructor
@@ -20,7 +21,6 @@ public class Employee extends User {
     // Dummy method: Access student details for a course
     public void accessStudentDetails(Student student) {
         // In a real system, this method would provide access to student details for
-        // System.out.println("Accessing details for student " + student.toString());
         // String the details to be more easy to read.
     }
 

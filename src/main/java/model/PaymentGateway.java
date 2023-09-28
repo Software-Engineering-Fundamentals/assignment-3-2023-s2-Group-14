@@ -6,11 +6,7 @@ public class PaymentGateway {
     private String userID;
     private double totalCost;
 
-    // This is an empty constructor
-    public PaymentGateway() {
-
-    }
-
+    // Constructor
     public PaymentGateway(String paymentID, String transactionDetails, String userID, double totalCost) {
         this.paymentID = paymentID;
         this.transactionDetails = transactionDetails;
@@ -18,8 +14,7 @@ public class PaymentGateway {
         this.totalCost = totalCost;
     }
 
-    // Process payment method, will check if successfull or unsuccesful. Depending
-    // on whether we receive true or false.
+    // Process payment method, will check if successful or not. With printed deets.
     public Boolean processPayment(boolean payment) {
         if (payment == true) {
             System.out.println("\nMaking Payment......\n\nSee details below:");

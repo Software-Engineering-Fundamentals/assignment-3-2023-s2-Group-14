@@ -1,11 +1,21 @@
 package main.java.model;
 
+import java.util.List;
+
 public class Manager extends Employee {
+    private List<Course> enquiryList; // List of enquries.
+
     // The Manager class inherits the Employee class constructor
     public Manager(String userID, String firstName, String lastName, String email, String address, String dateOfBirth,
             String phoneNumber, String emergencyContact, String password, String role) {
         super(userID, firstName, lastName, email, address, dateOfBirth, phoneNumber, emergencyContact, password, role);
         // Initialize additional fields specific to Manager, if any
+    }
+
+    public void receiveEnquiry() {
+        // Receive enquiry from student. Which would be apppended to the enquiryList.
+        // The enquiry will be sent to database, which manager can retrieve the list.
+
     }
 
     public void viewEnquiries() {
@@ -25,7 +35,7 @@ public class Manager extends Employee {
 
         enquiry.setContent(message);
         // If the status is solved.
-        if (resolveStatus == true) {
+        if (resolveStatus) {
             enquiry.statusEnquiry(true);
         }
         // If the status is unsolved.
