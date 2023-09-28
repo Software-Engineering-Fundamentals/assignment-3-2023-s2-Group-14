@@ -17,10 +17,11 @@ public class Main {
                 // Creating a Instructor to register Course
                 Instructor instructor = new Instructor("Instructor_ID", "Guy", "Lamar", "mrInstructor@gmail.com",
                                 "instructorAddress",
-                                "instructorDOB", "04123456789", "E: 04123456789", "instructo_password", "Instructor");
+                                "instructorDOB", "04123456789", "E: 04123456789", "instructor_password", "Instructor");
 
                 // User Login Successful, LOGIN = TRUE
-                System.out.println("ALT 1: Login = " + instructor.login("mrInstructor@gmail.com", "instructo_password"));
+                System.out.println(
+                                "ALT 1: Login = " + instructor.login("mrInstructor@gmail.com", "instructor_password"));
                 // Space for readability
                 System.out.println();
                 // User Login Unsuccessful, LOGIN = FALSE
