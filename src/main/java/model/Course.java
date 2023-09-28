@@ -8,15 +8,16 @@ public class Course {
     private String instructor;
     private String category;
     private double cost;
-    public Object getTitle;
 
     public Course() {
 
     }
-    public Course(String courseId, String title, String instructor, String category, double cost) {
+
+    public Course(String courseId, String title, String description, int duration, String instructor, String category, double cost) {
         this.courseId = courseId;
         this.title = title;
         this.description = description;
+        this.duration = duration;
         this.instructor = instructor;
         this.category = category;
         this.cost = cost;

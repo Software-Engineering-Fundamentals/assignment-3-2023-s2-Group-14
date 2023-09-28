@@ -89,7 +89,9 @@ public class Main {
                 int month = currentDate.getMonthValue();
                 int day = currentDate.getDayOfMonth();
                 String dob = (day + "/" + month + "/" + year);
-                Student John = new Student("875432", "John", "Dao", "johndao@gmail.com", "123 exmaple streen", dob, "049000034", "049000036", "john12345", "Student");
+                Student john = new Student("875432", "John", "Dao", "johndao@gmail.com", "123 exmaple streen", dob, "049000034", "049000036", "john12345", "Student");
+                Course sef = new Course("C2345", "Software Engineering", "This is a software engineering foundmental course", 6, "Instructor", "Computer Science", 1287.99);
+                john.enrollCourse("dob");
                 
         }
 
