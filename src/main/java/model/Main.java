@@ -1,8 +1,10 @@
 package main.java.model;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 import main.java.model.Manager;
 import main.java.model.Enquiry;
+import main.java.model.Student;
 
 //Main class will run the two subscenarios. 
 public class Main {
@@ -78,6 +80,17 @@ public class Main {
                                 false);
                 System.out.println(enquiry2.toString());
 
+
+
+
+                //Student can enroll into course and can access into course;
+                LocalDate currentDate = LocalDate.now();
+                int year = currentDate.getYear();
+                int month = currentDate.getMonthValue();
+                int day = currentDate.getDayOfMonth();
+                String dob = (day + "/" + month + "/" + year);
+                Student John = new Student("875432", "John", "Dao", "johndao@gmail.com", "123 exmaple streen", dob, "049000034", "049000036", "john12345", "Student");
+                
         }
 
 }

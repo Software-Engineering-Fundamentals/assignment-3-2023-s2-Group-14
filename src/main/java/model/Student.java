@@ -6,10 +6,10 @@ public class Student extends User {
     Course course = new Course();
     PaymentGateway payment = new PaymentGateway();
 
-    public Student(){
+    public Student(String string, String string2, String string3, String string4, String string5, String string6){
 
     }
-    public Student(String userID, String firstName, String lastName, String email, String password) {
+    public Student(String userID, String firstName, String lastName, String email, String password, String dob, String string, String string2, String string3, String string4) {
         super(userID, firstName, lastName, email, password);
     }
 

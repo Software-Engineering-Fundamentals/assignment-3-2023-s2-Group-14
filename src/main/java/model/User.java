@@ -18,7 +18,22 @@ public class User {
     public User(){
         
     }
+
+    public User(String userID, String firstName, String lastName, String email, String address, Date dateOfBirth, String phoneNumber, String emergencyContact, String password, String role) {
+        this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
+        this.emergencyContact = emergencyContact;
+        this.password = password;
+        this.role = role;
+    }
+
     // Constructor
+    //this constructor needs to be removed and above one should be used.
     public User(String userID, String firstName, String lastName, String email, String password) {
         this.userID = userID;
         this.firstName = firstName;
