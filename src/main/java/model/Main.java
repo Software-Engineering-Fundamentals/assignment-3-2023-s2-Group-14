@@ -1,10 +1,6 @@
 package main.java.model;
 
-import java.time.LocalDate;
 import java.util.Scanner;
-import main.java.model.Manager;
-import main.java.model.Enquiry;
-import main.java.model.Student;
 
 //Main class will run the two subscenarios. 
 public class Main {
@@ -22,30 +18,34 @@ public class Main {
                 // Subscenario 2.
                 System.out.println(
                                 "***Initialise Scenarerio 2****\nLodge a general enquiry about the portal which is successfully addressed by the Manager\n\n**Creating new user...\n");
-                // Creating a user to lodge an enquiry.
-                User user = new User("user_ID", "Phillip", "Braum", "iHaveAnEnquiry@gmail.com",
-                                "user_password");
+                // Creating a student to lodge an enquiry.
+                Student student = new Student("user_ID", "Phillip", "Braum", "iHaveAnEnquiry@gmail.com",
+                                "studentAddress",
+                                "StudentDOB", "04123456789", "E: 04123456789", "user_password", "Student");
 
-                // User Login Successful, LOGIN = TRUE
-                System.out.println("ALT 1: login = " + user.login("iHaveAnEnquiry@gmail.com", "user_password"));
+                // student Login Successful, LOGIN = TRUE
+                System.out.println("ALT 1: login = " + student.login("iHaveAnEnquiry@gmail.com", "user_password"));
                 // Space for readability
                 System.out.println();
-                // User Login Unsuccessful, LOGIN = FALSE
-                System.out.println("ALT 2: login = " + user.login("iHaveAnEnquiry@gmail.com", "wrong_password"));
+                // student Login Unsuccessful, LOGIN = FALSE
+                System.out.println("ALT 2: login = " + student.login("iHaveAnEnquiry@gmail.com", "wrong_password"));
 
-                System.out.printf("%nThe ID of the user is: %s%n", user.getUserID());
+                System.out.printf("%nThe ID of the user is: %s%n", student.getUserID());
                 System.out.println("To lodge an enquiry please enter your problem below:");
 
                 // Sample Enquiry
                 String sampleEnquiry = "The images and videos are loading very slow";
 
                 // Create a new Enquiry
-                Enquiry enquiry1 = User.createEnquiry("ID#12345", user, sampleEnquiry, false);
+                Enquiry enquiry1 = User.createEnquiry("ID#12345", student, sampleEnquiry, false);
                 System.out.print("**Creating new manager...");
 
                 // Create a manager to reply and handle enquiry
-                Manager manager = new Manager("manager_ID", "John", "Smith", "mrmanagerman@gmail.com",
-                                "managerPassword");
+                Manager manager = new Manager("manager_ID", "John", "Smith", "mrmanagerman@gmail.com", "ManagerAddress",
+                                "ManagerDOB",
+                                "04123456789", "E: 04123456789",
+                                "managerPassword", "Manager");
+
                 System.out.printf("%nThe ID of the manager is: %s%n", manager.getUserID());
                 System.out.println();
 
@@ -73,26 +73,27 @@ public class Main {
                                 "We will now run the alternative path, where an enquiry requires more information. Please press any key");
                 scanner.nextLine();
                 System.out.print("******ALT OPTION 2******");
-                Enquiry enquiry2 = new Enquiry("ID#12345", user.getUserID(), sampleEnquiry, false);
+                Enquiry enquiry2 = new Enquiry("ID#12345", student.getUserID(), sampleEnquiry, false);
 
                 // Manager requires more information,
                 manager.answerEnquiry(enquiry2, "#########       Here is the solution to the enquiry     #########",
                                 false);
                 System.out.println(enquiry2.toString());
 
+                // // Student can enroll into course and can access into course;
+                // LocalDate currentDate = LocalDate.now();
+                // int year = currentDate.getYear();
+                // int month = currentDate.getMonthValue();
+                // int day = currentDate.getDayOfMonth();
+                // String dob = (day + "/" + month + "/" + year);
+                // Student john = new Student("875432", "John", "Dao", "johndao@gmail.com", "123
+                // exmaple streen", dob,
+                // "049000034", "049000036", "john12345", "Student");
+                // Course sef = new Course("C2345", "Software Engineering",
+                // "This is a software engineering foundmental course", 6, "Instructor",
+                // "Computer Science", 1287.99);
+                // john.enrollCourse("dob");
 
-
-
-                //Student can enroll into course and can access into course;
-                LocalDate currentDate = LocalDate.now();
-                int year = currentDate.getYear();
-                int month = currentDate.getMonthValue();
-                int day = currentDate.getDayOfMonth();
-                String dob = (day + "/" + month + "/" + year);
-                Student john = new Student("875432", "John", "Dao", "johndao@gmail.com", "123 exmaple streen", dob, "049000034", "049000036", "john12345", "Student");
-                Course sef = new Course("C2345", "Software Engineering", "This is a software engineering foundmental course", 6, "Instructor", "Computer Science", 1287.99);
-                john.enrollCourse("dob");
-                
         }
 
 }
