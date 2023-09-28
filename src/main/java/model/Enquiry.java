@@ -16,7 +16,7 @@ public class Enquiry {
                 + "\nSystem is lodging.....\nSuccessfully lodged..! Please be patient while we handle your enquiry\n");
     }
 
-    // Getter method for userID
+    // Getter method for enquiry
     public String enquiryID() {
         return enquiryID;
     }
@@ -26,24 +26,22 @@ public class Enquiry {
         return userID;
     }
 
-    // Getter method for content
+    // Getter and setter method for content
     public String getContent() {
         return content;
     }
 
-    // Setter method for content
     public void setContent(String addContents) {
         this.content += "\n------------------------------ \n" + addContents;
 
     }
 
-    // Getter method for resolved
     public boolean isResolved() {
         return resolved;
     }
 
-    // Setter method for resolved
-    public void setResolved(boolean resolved) {
+    // Check status
+    public void statusEnquiry(boolean resolved) {
         if (resolved == true) {
             this.resolved = resolved;
             System.out.println("The enquiry " + enquiryID
