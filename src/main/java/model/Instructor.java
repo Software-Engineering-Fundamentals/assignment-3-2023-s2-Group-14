@@ -100,7 +100,7 @@ public class Instructor extends Employee {
         }
 
         // If it doesnt exist and payment is succesful.
-        System.out.println("Registering course: " + title + ".... Success! Please Proceed with payment.\n");
+        System.out.println("Registering course: " + title + " Success! Please Proceed with payment.\n");
         // Implement course registration logic here
         // Create a new Course object and return it
         Course newCourse = new Course(courseId, title, description, duration, instructor.getUserID(),
