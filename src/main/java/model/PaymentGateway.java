@@ -14,12 +14,13 @@ public class PaymentGateway {
         this.totalCost = totalCost;
     }
 
-    // Process payment method, will check if successful or not. With printed deets.
+    // Process payment method, will check if successful or not.
     public Boolean processPayment(boolean payment) {
         if (payment == true) {
             System.out.println("\nMaking Payment......\n\nSee details below:");
             System.out.println("User ID: " + this.userID);
             System.out.println("Amount: $" + this.totalCost);
+            // Dummy, requires logic to create invoice to send for user.
             System.out
                     .println("Transaction was succesful. Please check your email inbox for confirmation and invoice.");
             return true;
@@ -56,8 +57,14 @@ public class PaymentGateway {
         return totalCost;
     }
 
-    public void addTotalCost(double courseCost) {
-        this.totalCost += courseCost;
+    // Method to change cost. Useful when cost has changed.
+    public void setTotalCost(double cost) {
+        this.totalCost = cost;
+    }
+
+    // Verify if payment was succesful. Dummy method.
+    public boolean verifyPayment() {
+        return true;
     }
 
     // Dummy method for processing refunds. No parameters, as they are based

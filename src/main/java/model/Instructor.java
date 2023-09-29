@@ -28,7 +28,8 @@ public class Instructor extends Employee {
 
     // Dummy implementations for additional methods. For Lecture, MCQQuestion,
     // Lecture video, AssessmentDetails, Project Details, slides as strings for
-    // simplicity.
+    // simplicity. They all have their seperate classes. Their parent class is
+    // content, where we can displayContent()
 
     public void uploadLecture(Course course, String lectureVideo) {
         // Dummy code for lecture creation
