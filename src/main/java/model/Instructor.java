@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Instructor extends Employee {
+    private final double courseRegFeese = 50.0; 
     private List<Course> teachingCourses; // List of course Instructor may teach.
 
     // The Manager class inherits the Employee class constructor
@@ -76,7 +77,7 @@ public class Instructor extends Employee {
             // $100.00.
             PaymentGateway paymentGateway = new PaymentGateway("ID: Payment Registration",
                     "Successful transaction",
-                    instructor.getUserID(), 100.00);
+                    instructor.getUserID(), this.courseRegFeese);
 
             System.out.println("Alt 1: PaymentProcess = true");
 
