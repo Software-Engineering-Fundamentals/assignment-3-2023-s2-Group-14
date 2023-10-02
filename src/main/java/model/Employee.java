@@ -1,7 +1,7 @@
 package main.java.model;
 
 /**
- * Employee For manager, instructors, IT manager, financial manager and staff
+ * Employee refers to: manager, instructors, IT manager, financial manager and staff
  * only
  */
 public class Employee extends User {
