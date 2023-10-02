@@ -48,7 +48,7 @@ public class User {
          * an account for the user and
          * returns false
          */
-        System.out.println("Account was not successfully created\nPleas fill all the fields");
+        System.out.println("Account was not successfully created\nPlease fill all the fields");
         return false;
     }
 
