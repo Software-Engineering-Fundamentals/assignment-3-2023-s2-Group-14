@@ -14,7 +14,7 @@ public class Main {
                 // Subscenario 1.
                 System.out.println(
                                 "***Initialise Scenarerio 1****\nInstructor registers a course on the learning portal/website\n\n**Creating new instructor...");
-                // Creating a Instructor to register Course
+                // 1. Creating a Instructor to register Course
                 Instructor instructor = new Instructor("Instructor_ID", "Guy", "Lamar", "mrInstructor@gmail.com",
                                 "instructorAddress",
                                 "instructorDOB", "04123456789", "E: 04123456789", "instructor_password", "Instructor");
@@ -29,6 +29,7 @@ public class Main {
 
                 System.out.printf("%nThe ID of the instructor is: %s%n", instructor.getUserID());
                 System.out.println("To create a course please fill in the details:\n");
+                // 2.1
                 // We will now have the instructor create a course with prefilled data.
                 // FIRST ALT OPTION courseExists = False: Course doesnt exist.
                 System.out.println("ALT OPTION 1: Course can be created");
@@ -36,7 +37,7 @@ public class Main {
                                 instructor, 4999.00);
                 System.out.println("Press any key to continue with the other option. When the course already exists.");
                 scanner.nextLine();
-
+                // 2.2
                 // Second ALT OPTION courseExists = True: Course already exists.
                 System.out.println("ALT OPTION 2: Course already exists.");
                 instructor.registerCourse("exampleCourseID", "Computer science", "This course already exist!!!", 3,
@@ -48,7 +49,7 @@ public class Main {
                 System.out.println(
                                 "***Initialise Scenarerio 2****\nLodge a general enquiry about the portal which is successfully addressed by the Manager\n\n**Creating new Student...\n");
 
-                // Creating a student to lodge an enquiry.
+                // 1. Creating a student to lodge an enquiry.
                 Student student = new Student("user_ID", "Phillip", "Braum", "iHaveAnEnquiry@gmail.com",
                                 "studentAddress",
                                 "StudentDOB", "04123456789", "E: 04123456789", "student_password", "Student");
@@ -66,11 +67,11 @@ public class Main {
                 // Sample Enquiry
                 String sampleEnquiry = "The images and videos are loading very slow";
 
-                // Create a new Enquiry
+                // 2. Create a new Enquiry
                 Enquiry enquiry1 = User.createEnquiry("ID#12345", student, sampleEnquiry, false);
                 System.out.print("**Creating new manager...");
 
-                // Create a manager to reply and handle enquiry
+                // 3. Create a manager to reply and handle enquiry
                 Manager manager = new Manager("manager_ID", "John", "Smith", "mrmanagerman@gmail.com", "ManagerAddress",
                                 "ManagerDOB",
                                 "04123456789", "E: 04123456789",
@@ -78,26 +79,27 @@ public class Main {
 
                 System.out.printf("%nThe ID of the manager is: %s%n", manager.getUserID());
                 System.out.println();
-
-                // User Login Successful, LOGIN = TRUE
+                // Managers logs into account
+                // Managers Login Successful, LOGIN = TRUE
                 System.out.println("ALT 1: Login = " + manager.login("mrmanagerman@gmail.com", "managerPassword"));
                 // Space for readability
                 System.out.println();
-                // User Login Unsuccessful, LOGIN = FALSE
+                // Managers Login Unsuccessful, LOGIN = FALSE
                 System.out.println("ALT 2: Login = " + manager.login("mrmanagerman@gmail.com", "wrong_password"));
 
-                // Manager Views Enquiries, and retrives one.
+                // 4. Manager Views Enquiries, and retrives one.
                 System.out.println("\nRetrieving Enquiries...");
                 manager.viewEnquiries();
 
+                // 4.1
                 // FIRST ALT OPTION isResolved = true: Manager replies successfully
                 System.out.println("******ALT OPTION 1******");
                 manager.answerEnquiry(enquiry1, "#########       Here is the solution to the enquiry     #########",
                                 true);
-                // Tostring method to successful enquiry
+                // 5.1 Display the answered enquiry.
 
                 System.out.println(enquiry1.toString());
-
+                // 4.2
                 // SECOND ALT OPTION isResolved = false: Manager replies require more info
 
                 System.out.println(
@@ -110,7 +112,7 @@ public class Main {
                 manager.answerEnquiry(enquiry2,
                                 "#########       We require more information for this enquiry     #########",
                                 false);
-
+                // 5.2
                 // toString method to print enquiry need more info
                 System.out.println(enquiry2.toString());
                 scanner.close();

@@ -25,9 +25,9 @@ public class Course {
         this.description = description;
         this.duration = duration;
         this.instructor = instructor;
-        this.enrolledStudents = new ArrayList<>(); // Roll of students enrolled
-        this.isPublished = false; // Initially, course is not published. Instructor can set.
-        this.refundOffered = false; // Initially, no refund is offered. Instructor can set.
+        this.enrolledStudents = new ArrayList<>(); // List of students enrolled
+        this.isPublished = false; // Initially, course is not published. Instructor/employee can set.
+        this.refundOffered = false; // Initially, no refund is offered. Instructor/employee can set.
         this.cost = cost;
     }
 
